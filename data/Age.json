@@ -1,0 +1,29 @@
+[{
+        "Age": "<5",
+        "Population": 2704659
+    },
+    {
+        "Age": "5 - 13",
+        "Population": 4499890
+    },
+    {
+        "Age": "14 - 17",
+        "Population": 2159981
+    },
+    {
+        "Age": "18 - 24",
+        "Population": 3853788
+    },
+    {
+        "Age": "25 - 44",
+        "Population": 14106543
+    },
+    {
+        "Age": "45 - 64",
+        "Population": 8819342
+    },
+    {
+        "Age": "≥ 65",
+        "Population": 612463
+    }
+]

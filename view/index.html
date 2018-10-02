@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css' rel='stylesheet'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js'></script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js'></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.7/c3.min.css' rel='stylesheet'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.7/c3.min.js'></script>
+
+    <script src='../javascript/chart.js'></script>
+
+    <style>
+        .chart {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body style='background-color: slategray; margin: 25px;'>
+    <div id='RealTimeChart' class='chart' style='width: 900px; height: 400px;'></div>
+    <script>
+        (function create() {
+            var data = new Object();
+            data.id = 'RealTimeChart';
+            data.url = '../data/Earthquake.json';
+            data.style = {
+                'width': '900',
+                'height': '400'
+            };
+            data.type = 'Dygrphs';
+            data.chart = {
+                'valueRange': [0.0, 1.0],
+                'interval': 10000,
+                'style': {
+                    'pattern': ['red'],
+                    'stroke': {
+                        'width': '5',
+                    }
+                }
+            }
+            Analyser(data);
+        })();
+    </script>
+
+    <br>
+
+    <div id='RealTimeChart2' class='chart' style='width: 900px; height: 400px;'></div>
+    <script>
+        (function create() {
+            var data = new Object();
+            data.id = 'RealTimeChart2';
+            data.url = '../data/Earthquake2.json';
+            data.style = {
+                'width': '900',
+                'height': '400',
+                'background': 'black',
+                'color': 'white'
+            };
+            data.type = 'Dygrphs';
+            data.chart = {
+                'valueRange': [0.0, 1.0],
+                'interval': 10000,
+                'style': {
+                    'pattern': ['blue'],
+                    'stroke': {
+                        'width': '1',
+                    }
+                }
+            }
+            Analyser(data);
+        })();
+    </script>
+
+    <br>
+
+    <div id='StatisticalChart_Line' class='chart' style='width: 900px; height: 400px;'></div>
+    <script>
+        (function create() {
+            var data = new Object();
+            data.id = 'StatisticalChart_Line';
+            data.url = '../data/Temperature.json';
+            data.style = {
+                'width': '900',
+                'height': '400',
+                'background': 'black',
+                'color': 'white'
+            };
+            data.type = 'C3';
+            data.chart = {
+                'type': 'Line',
+                'x': 'Date',
+                'keys': ['Temperature'],
+                'style': {
+                    'pattern': ['red'],
+                    'stroke': {
+                        'width': '5',
+                    }
+                }
+            }
+            Analyser(data);
+        })();
+    </script>
+
+    <br>
+
+    <div id='StatisticalChart_Pie' class='chart' style='display: inline-block; margin: 0px 48px 0px 0px; width: 400px; height: 400px;'></div>
+    <script>
+        (function create() {
+            var data = new Object();
+            data.id = 'StatisticalChart_Pie';
+            data.url = '../data/Temperature.json';
+            data.style = {
+                'width': '400',
+                'height': '400',
+                'background': 'dimgrey',
+                'color': 'white'
+            };
+            data.type = 'C3';
+            data.chart = {
+                'type': 'Pie',
+                'key': 'Date',
+                'value': 'Temperature',
+                'style': {
+                    'pattern': ['red']
+                }
+            }
+            Analyser(data);
+        })();
+    </script>
+
+    <div id='StatisticalChart_Pie2' class='chart' style='display: inline-block; margin: 0px 0px 0px 48px; width: 400px; height: 400px;'></div>
+    <script>
+        (function create() {
+            var data = new Object();
+            data.id = 'StatisticalChart_Pie2';
+            data.url = '../data/Age.json';
+            data.style = {
+                'width': '400',
+                'height': '400',
+                'background': 'black',
+                'color': 'white'
+            };
+            data.type = 'C3';
+            data.chart = {
+                'type': 'Pie',
+                'key': 'Age',
+                'value': 'Population',
+                'style': {
+                    'pattern': ['coral', 'cadetblue', 'burlywood', 'cornflowerblue', 'dimgrey', 'darkseagreen',
+                        'mediumslateblue'
+                    ]
+                }
+            }
+            Analyser(data);
+        })();
+    </script>
+</body>
+
+</html>
