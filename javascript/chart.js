@@ -33,7 +33,7 @@ function JSONtoData(json, key, value) {
     return data
 }
 
-function Chart(options) {
+function Charting(options) {
     switch (options.type) {
         case 'Dygrphs':
             Dygrphs(options);
@@ -72,7 +72,7 @@ function Dygrphs(options) {
 function C3(options) {
     switch (options.chart.type) {
         case 'Line':
-            (function LineChart() {
+            (function LineCharting() {
                 var chart = null;
                 $.getJSON(options.url, function (data) {
                     chart = c3.generate({
@@ -98,7 +98,7 @@ function C3(options) {
             })();
             break;
         case 'Pie':
-            (function PieChart() {
+            (function PieCharting() {
                 var chart = null;
                 $.getJSON(options.url, function (data) {
                     chart = c3.generate({
