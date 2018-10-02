@@ -33,7 +33,7 @@ function JSONtoData(json, key, value) {
     return data
 }
 
-function Analyser(options) {
+function Chart(options) {
     switch (options.type) {
         case 'Dygrphs':
             Dygrphs(options);
