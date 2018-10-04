@@ -1,4 +1,4 @@
-# Analyser Library
+# Chart Library
 ## Custom Chart Library With C3, Dygraphs
 ### Purpose
 1. Understand C3 process.
@@ -26,3 +26,4 @@
 ## Histories
     2018.10.01. DyGraphs.
     2018.10.02. C3.
+    2018.10.03. Label, Legend.

@@ -16,150 +16,340 @@
     <script src='../javascript/chart.js'></script>
 
     <style>
+        body {
+            background-color: gray;
+
+            width: 850px;
+
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+
+            text-align: center;
+        }
+
         .chart {
+            display: inline-block;
+
             background-color: white;
         }
     </style>
 </head>
 
-<body style='background-color: slategray; margin: 25px;'>
-    <div id='RealTimeChart' class='chart' style='width: 900px; height: 400px;'></div>
-    <script>
-        (function create() {
-            var data = new Object();
-            data.id = 'RealTimeChart';
-            data.url = '../data/Earthquake.json';
-            data.style = {
-                'width': '900',
-                'height': '400'
-            };
-            data.type = 'Dygrphs';
-            data.chart = {
-                'valueRange': [0.0, 1.0],
-                'interval': 10000,
-                'style': {
-                    'pattern': ['red'],
-                    'stroke': {
-                        'width': '5',
+<body>
+    <div>
+        <div id='RealTimeChart' class='chart' style='width: 800px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'RealTimeChart';
+                    data.url = '../data/Earthquake.json';
+                    data.style = {
+                        'width': '800',
+                        'height': '400',
+                        'background': 'white',
+                        'color': 'orangered'
+                    };
+                    data.type = 'Dygrphs';
+                    data.chart = {
+                        'valueRange': [0.0, 1.0],
+                        'interval': 10000,
+                        'style': {
+                            'pattern': ['red'],
+                            'width': '5',
+                        }
                     }
-                }
-            }
-            Charting(data);
-        })();
-    </script>
-
-    <br>
-
-    <div id='RealTimeChart2' class='chart' style='width: 900px; height: 400px;'></div>
-    <script>
-        (function create() {
-            var data = new Object();
-            data.id = 'RealTimeChart2';
-            data.url = '../data/Earthquake2.json';
-            data.style = {
-                'width': '900',
-                'height': '400',
-                'background': 'black',
-                'color': 'white'
-            };
-            data.type = 'Dygrphs';
-            data.chart = {
-                'valueRange': [0.0, 1.0],
-                'interval': 10000,
-                'style': {
-                    'pattern': ['blue'],
-                    'stroke': {
-                        'width': '1',
+                    Charting(data);
+                })();
+            </script>
+        </div>
+        <div id='RealTimeChart2' class='chart' style='width: 800px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'RealTimeChart2';
+                    data.url = '../data/Earthquake2.json';
+                    data.style = {
+                        'width': '800',
+                        'height': '400',
+                        'background': 'black',
+                        'color': 'skyblue'
+                    };
+                    data.type = 'Dygrphs';
+                    data.chart = {
+                        'valueRange': [0.0, 1.0],
+                        'interval': 10000,
+                        'style': {
+                            'pattern': ['blue'],
+                            'width': '10',
+                        }
                     }
-                }
-            }
-            Charting(data);
-        })();
-    </script>
+                    Charting(data);
+                })();
+            </script>
+        </div>
+    </div>
 
-    <br>
 
-    <div id='StatisticalChart_Line' class='chart' style='width: 900px; height: 400px;'></div>
-    <script>
-        (function create() {
-            var data = new Object();
-            data.id = 'StatisticalChart_Line';
-            data.url = '../data/Temperature.json';
-            data.style = {
-                'width': '900',
-                'height': '400',
-                'background': 'black',
-                'color': 'white'
-            };
-            data.type = 'C3';
-            data.chart = {
-                'type': 'Line',
-                'x': 'Date',
-                'keys': ['Temperature'],
-                'style': {
-                    'pattern': ['red'],
-                    'stroke': {
-                        'width': '5',
+
+    <div>
+        <div id='StatisticalChart_Line' class='chart' style='width: 800px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Line';
+                    data.url = '../data/Temperature.json';
+                    data.style = {
+                        'width': '800',
+                        'height': '400',
+                        'background': 'white',
+                        'color': 'orangered'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Line',
+                        'x': 'Date',
+                        'keys': ['Temperature'],
+                        'style': {
+                            'pattern': ['red'],
+                            'width': '5',
+                            'legend': {
+                                'show': true,
+                                'position': 'right'
+                            }
+                        }
                     }
-                }
-            }
-            Charting(data);
-        })();
-    </script>
+                    Charting(data);
+                })();
+            </script>
+        </div>
+        <div id='StatisticalChart_Spline' class='chart' style='width: 800px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Spline';
+                    data.url = '../data/Temperature.json';
+                    data.style = {
+                        'width': '800',
+                        'height': '400',
+                        'background': 'black',
+                        'color': 'skyblue'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Spline',
+                        'x': 'Date',
+                        'keys': ['Temperature'],
+                        'style': {
+                            'pattern': ['blue'],
+                            'width': '5',
+                            'legend': {
+                                'show': true,
+                                'position': 'right'
+                            }
+                        }
+                    }
+                    Charting(data);
+                })();
+            </script>
+        </div>
+    </div>
 
-    <br>
 
-    <div id='StatisticalChart_Pie' class='chart' style='display: inline-block; margin: 0px 48px 0px 0px; width: 400px; height: 400px;'></div>
-    <script>
-        (function create() {
-            var data = new Object();
-            data.id = 'StatisticalChart_Pie';
-            data.url = '../data/Temperature.json';
-            data.style = {
-                'width': '400',
-                'height': '400',
-                'background': 'dimgrey',
-                'color': 'white'
-            };
-            data.type = 'C3';
-            data.chart = {
-                'type': 'Pie',
-                'key': 'Date',
-                'value': 'Temperature',
-                'style': {
-                    'pattern': ['red']
-                }
-            }
-            Charting(data);
-        })();
-    </script>
 
-    <div id='StatisticalChart_Pie2' class='chart' style='display: inline-block; margin: 0px 0px 0px 48px; width: 400px; height: 400px;'></div>
-    <script>
-        (function create() {
-            var data = new Object();
-            data.id = 'StatisticalChart_Pie2';
-            data.url = '../data/Age.json';
-            data.style = {
-                'width': '400',
-                'height': '400',
-                'background': 'black',
-                'color': 'white'
-            };
-            data.type = 'C3';
-            data.chart = {
-                'type': 'Pie',
-                'key': 'Age',
-                'value': 'Population',
-                'style': {
-                    'pattern': ['coral', 'cadetblue', 'burlywood', 'cornflowerblue', 'dimgrey', 'darkseagreen',
-                        'mediumslateblue'
-                    ]
-                }
-            }
-            Charting(data);
-        })();
-    </script>
+    <div>
+        <div id='StatisticalChart_Donut' class='chart' style='width: 400px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Donut';
+                    data.url = '../data/Temperature.json';
+                    data.style = {
+                        'width': '400',
+                        'height': '400',
+                        'background': 'white',
+                        'color': 'orangered'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Donut',
+                        'title': 'Temperature!',
+                        'key': 'Date',
+                        'value': 'Temperature',
+                        'style': {
+                            'pattern': ['red'],
+                            'width': 50,
+                            'label': false,
+                            'legend': {
+                                'show': true,
+                                'position': 'right'
+                            }
+                        },
+                    }
+                    Charting(data);
+                })();
+            </script>
+        </div>
+        <div id='StatisticalChart_Donut2' class='chart' style='width: 400px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Donut2';
+                    data.url = '../data/Temperature.json';
+                    data.style = {
+                        'width': '400',
+                        'height': '400',
+                        'background': 'black',
+                        'color': 'skyblue'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Donut',
+                        'title': 'Temperature!',
+                        'key': 'Date',
+                        'value': 'Temperature',
+                        'style': {
+                            'pattern': ['blue'],
+                            'width': 10,
+                            'label': false,
+                            'legend': {
+                                'show': false
+                            }
+                        },
+                    }
+                    Charting(data);
+                })();
+            </script>
+        </div>
+    </div>
+    <div>
+        <div id='StatisticalChart_Pie' class='chart' style='width: 400px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Pie';
+                    data.url = '../data/Age.json';
+                    data.style = {
+                        'width': '400',
+                        'height': '400',
+                        'background': 'white',
+                        'color': 'orangered'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Pie',
+                        'key': 'Age',
+                        'value': 'Population',
+                        'style': {
+                            'pattern': ['red'],
+                            'label': false,
+                            'legend': {
+                                'show': true,
+                                'position': 'right'
+                            }
+                        },
+                    }
+                    Charting(data);
+                })();
+            </script>
+        </div>
+        <div id='StatisticalChart_Pie2' class='chart' style='width: 400px; height: 400px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Pie2';
+                    data.url = '../data/Age.json';
+                    data.style = {
+                        'width': '400',
+                        'height': '400',
+                        'background': 'black',
+                        'color': 'skyblue'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Pie',
+                        'key': 'Age',
+                        'value': 'Population',
+                        'style': {
+                            'pattern': ['blue'],
+                            'label': false,
+                            'legend': {
+                                'show': false
+                            }
+                        },
+                    }
+                    Charting(data);
+                })();
+            </script>
+        </div>
+    </div>
+
+
+
+    <div>
+        <div id='StatisticalChart_Gauge' class='chart' style='width: 400px; height: 200px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Gauge';
+                    data.url = '../data/Success.json';
+                    data.style = {
+                        'width': '400',
+                        'height': '200',
+                        'background': 'white',
+                        'color': 'black'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Gauge',
+                        'style': {
+                            'pattern': ['red', 'yellow', 'green'],
+                            'threshold': {
+                                'values': [30, 70, 100]
+                            },
+                            'label': false,
+                            'legend': {
+                                'show': true,
+                                'position': 'right'
+                            }
+                        }
+                    }
+                    Charting(data);
+                })();
+            </script>
+        </div>
+        <div id='StatisticalChart_Gauge2' class='chart' style='width: 400px; height: 200px;'>
+            <script>
+                (function create() {
+                    var data = new Object();
+                    data.id = 'StatisticalChart_Gauge2';
+                    data.url = '../data/Success.json';
+                    data.style = {
+                        'width': '400',
+                        'height': '200',
+                        'background': 'black',
+                        'color': 'white'
+                    };
+                    data.type = 'C3';
+                    data.chart = {
+                        'type': 'Gauge',
+                        'style': {
+                            'pattern': ['green', 'yellow', 'red'],
+                            'threshold': {
+                                'values': [30, 70, 100]
+                            },
+                            'width': 50,
+                            'label': false,
+                            'legend': {
+                                'show': false
+                            }
+                        }
+                    }
+                    Charting(data);
+                })();
+            </script>
+        </div>
+    </div>
 </body>
 
 </html>
