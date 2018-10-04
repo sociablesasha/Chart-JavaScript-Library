@@ -15,7 +15,7 @@ data.type = '';
 data.chart = {
     // Options
 }
-Analyser(data);
+Charting(data);
 ```
 
 ## Dygrphs

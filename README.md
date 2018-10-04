@@ -1,4 +1,4 @@
-# Chart Library
+# Chartus Library
 ## Custom Chart Library With C3, Dygraphs
 ### Purpose
 1. Understand C3 process.
